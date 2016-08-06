@@ -1,0 +1,12 @@
+D:\projects\SCStreamToMp3\SCStreamToMp3\bin\Debug\SoundcloudStreamToMp3.exe.config
+D:\projects\SCStreamToMp3\SCStreamToMp3\bin\Debug\SoundcloudStreamToMp3.exe
+D:\projects\SCStreamToMp3\SCStreamToMp3\bin\Debug\SoundcloudStreamToMp3.pdb
+D:\projects\SCStreamToMp3\SCStreamToMp3\bin\Debug\ZhaoStephen.LoggingDotNet.dll
+D:\projects\SCStreamToMp3\SCStreamToMp3\bin\Debug\ZhaoStephen.LoggingDotNet.pdb
+D:\projects\SCStreamToMp3\SCStreamToMp3\obj\Debug\SCStreamToMp3.csprojResolveAssemblyReference.cache
+D:\projects\SCStreamToMp3\SCStreamToMp3\obj\Debug\SCStreamToMp3.Forms.MainForm.resources
+D:\projects\SCStreamToMp3\SCStreamToMp3\obj\Debug\SoundcloudStreamToMp3.Properties.Resources.resources
+D:\projects\SCStreamToMp3\SCStreamToMp3\obj\Debug\SCStreamToMp3.SCStreamToMp3Panel.resources
+D:\projects\SCStreamToMp3\SCStreamToMp3\obj\Debug\SCStreamToMp3.csproj.GenerateResource.Cache
+D:\projects\SCStreamToMp3\SCStreamToMp3\obj\Debug\SoundcloudStreamToMp3.exe
+D:\projects\SCStreamToMp3\SCStreamToMp3\obj\Debug\SoundcloudStreamToMp3.pdb

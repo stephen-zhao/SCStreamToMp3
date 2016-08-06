@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCStreamToMp3", "SCStreamToMp3.csproj", "{17CDE6B6-D5DD-4179-9DF4-B7CFC8DF73BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteStreamToMp3", "..\LiteStreamToMp3\LiteStreamToMp3.csproj", "{127DFED5-C4D5-4C21-90EC-7A22BA08AF70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17CDE6B6-D5DD-4179-9DF4-B7CFC8DF73BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17CDE6B6-D5DD-4179-9DF4-B7CFC8DF73BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17CDE6B6-D5DD-4179-9DF4-B7CFC8DF73BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17CDE6B6-D5DD-4179-9DF4-B7CFC8DF73BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{127DFED5-C4D5-4C21-90EC-7A22BA08AF70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{127DFED5-C4D5-4C21-90EC-7A22BA08AF70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{127DFED5-C4D5-4C21-90EC-7A22BA08AF70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{127DFED5-C4D5-4C21-90EC-7A22BA08AF70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
