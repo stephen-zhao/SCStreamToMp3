@@ -1,0 +1,15 @@
+D:\projects\SCStreamToMp3\LiteStreamToMp3\bin\Release\LiteStreamToMp3.exe.config
+D:\projects\SCStreamToMp3\LiteStreamToMp3\bin\Release\LiteStreamToMp3.exe
+D:\projects\SCStreamToMp3\LiteStreamToMp3\bin\Release\LiteStreamToMp3.pdb
+D:\projects\SCStreamToMp3\LiteStreamToMp3\bin\Release\Newtonsoft.Json.dll
+D:\projects\SCStreamToMp3\LiteStreamToMp3\bin\Release\Syroot.Windows.IO.KnownFolders.dll
+D:\projects\SCStreamToMp3\LiteStreamToMp3\bin\Release\ZhaoStephen.LoggingDotNet.dll
+D:\projects\SCStreamToMp3\LiteStreamToMp3\bin\Release\Newtonsoft.Json.xml
+D:\projects\SCStreamToMp3\LiteStreamToMp3\bin\Release\Syroot.Windows.IO.KnownFolders.xml
+D:\projects\SCStreamToMp3\LiteStreamToMp3\bin\Release\ZhaoStephen.LoggingDotNet.pdb
+D:\projects\SCStreamToMp3\LiteStreamToMp3\obj\Release\LiteStreamToMp3.csprojResolveAssemblyReference.cache
+D:\projects\SCStreamToMp3\LiteStreamToMp3\obj\Release\LiteStreamToMp3.LiteStreamToMp3Form.resources
+D:\projects\SCStreamToMp3\LiteStreamToMp3\obj\Release\LiteStreamToMp3.Properties.Resources.resources
+D:\projects\SCStreamToMp3\LiteStreamToMp3\obj\Release\LiteStreamToMp3.csproj.GenerateResource.Cache
+D:\projects\SCStreamToMp3\LiteStreamToMp3\obj\Release\LiteStreamToMp3.exe
+D:\projects\SCStreamToMp3\LiteStreamToMp3\obj\Release\LiteStreamToMp3.pdb
