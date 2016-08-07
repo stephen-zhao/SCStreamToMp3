@@ -22,6 +22,7 @@ An MP3 downloader for SC. Once complete, SCStreamToMp3 will include a built-in I
 
 ### How to Use
 ![LiteStreamToMp3 Screenshot](https://i.gyazo.com/0bbcb010e867d4d4beb9a3afff488117.png)
+
 1. Enter the soundtrack page url into the "To" field. This url should be in the form of soundcloud.com/author/track-name.
 2. Enter the downloaded file name. Press "Auto Set Save" to automatically create a file name based on the author and name of the track. Use the "Select" button to choose a file name manually or to edit the auto-generated name. 
 3. Click "Download MP3!" and wait for the download to finish.
