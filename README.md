@@ -20,7 +20,7 @@ An MP3 downloader for SC. Once complete, SCStreamToMp3 will include a built-in I
 - Newtonsoft.Json (v9.0.0.0)
 - Syroot.Windows.IO.KnownFolders
 
-### How to Use
+### How to Use:
 ![LiteStreamToMp3 Screenshot](https://i.gyazo.com/0bbcb010e867d4d4beb9a3afff488117.png)
 
 1. Enter the soundtrack page url into the "To" field. This url should be in the form of soundcloud.com/author/track-name.
