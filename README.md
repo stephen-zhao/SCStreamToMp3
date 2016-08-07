@@ -5,7 +5,7 @@ An MP3 downloader for SC. Once complete, SCStreamToMp3 will include a built-in I
 <dl>
 
 <dt>LiteStreamToMp3</dt>
-<dd><a href="https://github.com/stephen-zhao/SCStreamToMp3/tree/master/LiteStreamToMp3/bin/Release">Release Version 0.1.0.0 (Stable Release)</a></dd>
+<dd><a href="https://mega.nz/#!YF8g1AyT!37EvIDtzVfjvzO6nX-FLEAP1S8esMy6JMv8VXYyn9R8">Release Version 0.1.0.0 (Stable Release)</a></dd>
 
 <dt>SCStreamToMp3</dt>
 <dd>Planning Phase</dd>
@@ -22,5 +22,3 @@ An MP3 downloader for SC. Once complete, SCStreamToMp3 will include a built-in I
 - Meanwhile, LiteStreamToMp3 was created as a demo and proof-of-concept. It comes with SCStreamToMp3's basic core functionality
 - Clone the repository and navigate to LiteStreamToMp3/bin/Release for the latest executable.
 
-## Development
-- Eventually release v0.1.0.0 will be uploaded to an external site for easier download/use
