@@ -15,6 +15,7 @@ An MP3 downloader for SC. Once complete, SCStreamToMp3 will include a built-in I
 ## Dependencies (included):
 - ZhaoStephen.LoggingDotNet (v0.0.1.6)
 - Newtonsoft.Json (v9.0.0.0)
+- Syroot.Windows.IO.KnownFolders
 
 ## Use
 - SCStreamToMp3 is still in its planning stage of development, so obviously it's not available for use.
