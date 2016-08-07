@@ -13,21 +13,60 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZhaoStephen.LoggingDotNet;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
+using System.Threading;
 
 namespace LiteStreamToMp3
 {
     public partial class LiteStreamToMp3Form : Form
     {
+        private static readonly string s_defaultDownloadDirectory = Path.Combine(Syroot.Windows.IO.KnownFolders.Downloads.Path, "LiteStreamToMp3 Downloads");
+
         private Logger _logger;
-        private string _defaultDownloadDirectory = Syroot.Windows.IO.KnownFolders.Downloads.Path;
+        private string _lastDownloadDirectory;
+        private bool _isDownloading = false;
         private Regex _trackWebPageUrlRegex = new Regex(@"^(https?://)?(www\.)?soundcloud.com/(?<artist>.+)/(?<trackName>[^/\s]+)$");
         private bool _triedOnceToSetSaveFileBySoundcloudTrackWebPageUrl = false;
 
+        private string DefaultDownloadDirectory
+        {
+            get
+            {
+                if (Properties.Settings.Default.DefaultDownloadFolder == "not_filled")
+                {
+                    return s_defaultDownloadDirectory;
+                }
+                else
+                {
+                    return Properties.Settings.Default.DefaultDownloadFolder;
+                }
+            }
+            set
+            {
+                Properties.Settings.Default.DefaultDownloadFolder = value;
+                Properties.Settings.Default.Save();
+            }
+        }
+
         public LiteStreamToMp3Form()
         {
+            // Instantiate logger
             _logger = new Logger("LiteStreamToMP3Logger");
             _logger.Info("Program start.");
+
+            // Visual Studio initialize UI components
             InitializeComponent();
+
+            // Setup filesystem
+            if (!Directory.Exists(DefaultDownloadDirectory))
+            {
+                Directory.CreateDirectory(DefaultDownloadDirectory);
+            }
+            
+            // Setup the default download folder editor
+            FBDDefaultDownloadFolder.SelectedPath = DefaultDownloadDirectory;
+
+            // Add the appropriate outputs for the logger
             _logger.AddOutputGeneric((str) => { SSLblLog.Text = str; }, LogOrnamentLvl.SIMPLIFIED);
 #if DEBUG
             _logger.AddOutputWriter(Console.Out, LogOrnamentLvl.FULL);
@@ -72,10 +111,13 @@ namespace LiteStreamToMp3
             }
             catch (ArgumentException ex)
             {
-                SFDTo.InitialDirectory = _defaultDownloadDirectory;
+                SFDTo.InitialDirectory = DefaultDownloadDirectory;
                 SFDTo.FileName = "";
             }
-            SFDTo.ShowDialog(this);
+            if (SFDTo.ShowDialog(this) == DialogResult.Cancel)
+            {
+                _logger.Info("Canceled save file set.");
+            }
         }
 
         private void SFDTo_FileOk(object sender, CancelEventArgs e)
@@ -94,6 +136,7 @@ namespace LiteStreamToMp3
             else
             {
                 SetUiStatePostBtnDownloadClick();
+                _isDownloading = true;
                 try
                 {
                     await DownloadSoundcloudMp3(SetUiStatePostDownload);
@@ -106,6 +149,10 @@ namespace LiteStreamToMp3
                     }
                     _logger.Error(ex.Message);
                     SetUiStatePostDownload();
+                }
+                finally
+                {
+                    _isDownloading = false;
                 }
             }
         }
@@ -120,7 +167,7 @@ namespace LiteStreamToMp3
             }
             string artist = ConvertHyphenatedToWhitespaceCamelCase(artistRaw);
             string title = ConvertHyphenatedToWhitespaceCamelCase(titleRaw);
-            TBTo.Text = Path.Combine(_defaultDownloadDirectory, artist + " - " + title + ".mp3");
+            TBTo.Text = Path.Combine(DefaultDownloadDirectory, artist + " - " + title + ".mp3");
             return true;
         }
 
@@ -265,11 +312,63 @@ namespace LiteStreamToMp3
                 await resContentStream.CopyToAsync(fs);
             }
 
+            // Save download directory
+            _lastDownloadDirectory = Path.GetDirectoryName(saveFilePath);
+
             // Log done
             _logger.Info("Finished downloading to \"" + Path.GetFileName(saveFilePath) + "\".");
 
             // Do callback
             callback();
+        }
+
+        private void TSMIGotoDefaultDownloadDir_Click(object sender, EventArgs e)
+        {
+            Process.Start(DefaultDownloadDirectory);
+            _logger.Info("Opened default download folder.");
+        }
+
+        private void TSMIGotoLastDownloadDir_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(_lastDownloadDirectory))
+            {
+                Process.Start(_lastDownloadDirectory);
+                _logger.Info("Opened last download folder.");
+            }
+            else
+            {
+                _logger.Error("No last download folder.");
+            }
+        }
+
+        private void TSMIExit_Click(object sender, EventArgs e)
+        {
+            if (_isDownloading)
+            {
+                _logger.Warn("Cannot exit: download in progress.");
+                return;
+            }
+            _logger.Info("Exiting...");
+            this.Invoke(new Action(() => Close()));
+        }
+
+        private void TSMISetDefaultDownloadDir_Click(object sender, EventArgs e)
+        {
+            if (FBDDefaultDownloadFolder.ShowDialog(this) == DialogResult.OK)
+            {
+                DefaultDownloadDirectory = FBDDefaultDownloadFolder.SelectedPath;
+                _logger.Info("Set default download folder set to \"" + DefaultDownloadDirectory + "\".");
+            }
+            else
+            {
+                FBDDefaultDownloadFolder.SelectedPath = DefaultDownloadDirectory;
+            }
+        }
+
+        private void TSMIResetDefaultDownloadDir_Click(object sender, EventArgs e)
+        {
+            DefaultDownloadDirectory = s_defaultDownloadDirectory;
+            _logger.Info("Reset default download folder to \"" + s_defaultDownloadDirectory + "\".");
         }
     }
 }

@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MenuStripMain = new System.Windows.Forms.MenuStrip();
+            this.TSMMain = new System.Windows.Forms.MenuStrip();
+            this.TSMIFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIGotoDefaultDownloadDir = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIGotoLastDownloadDir = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMSFile01 = new System.Windows.Forms.ToolStripSeparator();
+            this.TSMIExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMISetDefaultDownloadDir = new System.Windows.Forms.ToolStripMenuItem();
             this.SFDTo = new System.Windows.Forms.SaveFileDialog();
             this.LayoutMain = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnAutoSetTo = new System.Windows.Forms.Button();
             this.LblFrom = new System.Windows.Forms.Label();
             this.LblTo = new System.Windows.Forms.Label();
             this.TBFrom = new System.Windows.Forms.TextBox();
@@ -39,18 +47,78 @@
             this.BtnDownload = new System.Windows.Forms.Button();
             this.SSMain = new System.Windows.Forms.StatusStrip();
             this.SSLblLog = new System.Windows.Forms.ToolStripStatusLabel();
-            this.BtnAutoSetTo = new System.Windows.Forms.Button();
+            this.FBDDefaultDownloadFolder = new System.Windows.Forms.FolderBrowserDialog();
+            this.TSMIResetDefaultDownloadDir = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMSEdit01 = new System.Windows.Forms.ToolStripSeparator();
+            this.TSMMain.SuspendLayout();
             this.LayoutMain.SuspendLayout();
             this.SSMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // MenuStripMain
+            // TSMMain
             // 
-            this.MenuStripMain.Location = new System.Drawing.Point(0, 0);
-            this.MenuStripMain.Name = "MenuStripMain";
-            this.MenuStripMain.Size = new System.Drawing.Size(624, 24);
-            this.MenuStripMain.TabIndex = 0;
-            this.MenuStripMain.Text = "menuStrip1";
+            this.TSMMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMIFile,
+            this.TSMIEdit});
+            this.TSMMain.Location = new System.Drawing.Point(0, 0);
+            this.TSMMain.Name = "TSMMain";
+            this.TSMMain.Size = new System.Drawing.Size(624, 24);
+            this.TSMMain.TabIndex = 0;
+            this.TSMMain.Text = "menuStrip1";
+            // 
+            // TSMIFile
+            // 
+            this.TSMIFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMIGotoDefaultDownloadDir,
+            this.TSMIGotoLastDownloadDir,
+            this.TSMSFile01,
+            this.TSMIExit});
+            this.TSMIFile.Name = "TSMIFile";
+            this.TSMIFile.Size = new System.Drawing.Size(37, 20);
+            this.TSMIFile.Text = "File";
+            // 
+            // TSMIGotoDefaultDownloadDir
+            // 
+            this.TSMIGotoDefaultDownloadDir.Name = "TSMIGotoDefaultDownloadDir";
+            this.TSMIGotoDefaultDownloadDir.Size = new System.Drawing.Size(234, 22);
+            this.TSMIGotoDefaultDownloadDir.Text = "Goto Default Download Folder";
+            this.TSMIGotoDefaultDownloadDir.Click += new System.EventHandler(this.TSMIGotoDefaultDownloadDir_Click);
+            // 
+            // TSMIGotoLastDownloadDir
+            // 
+            this.TSMIGotoLastDownloadDir.Name = "TSMIGotoLastDownloadDir";
+            this.TSMIGotoLastDownloadDir.Size = new System.Drawing.Size(234, 22);
+            this.TSMIGotoLastDownloadDir.Text = "Goto Last Download Location";
+            this.TSMIGotoLastDownloadDir.Click += new System.EventHandler(this.TSMIGotoLastDownloadDir_Click);
+            // 
+            // TSMSFile01
+            // 
+            this.TSMSFile01.Name = "TSMSFile01";
+            this.TSMSFile01.Size = new System.Drawing.Size(231, 6);
+            // 
+            // TSMIExit
+            // 
+            this.TSMIExit.Name = "TSMIExit";
+            this.TSMIExit.Size = new System.Drawing.Size(234, 22);
+            this.TSMIExit.Text = "Exit";
+            this.TSMIExit.Click += new System.EventHandler(this.TSMIExit_Click);
+            // 
+            // TSMIEdit
+            // 
+            this.TSMIEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMISetDefaultDownloadDir,
+            this.TSMSEdit01,
+            this.TSMIResetDefaultDownloadDir});
+            this.TSMIEdit.Name = "TSMIEdit";
+            this.TSMIEdit.Size = new System.Drawing.Size(39, 20);
+            this.TSMIEdit.Text = "Edit";
+            // 
+            // TSMISetDefaultDownloadDir
+            // 
+            this.TSMISetDefaultDownloadDir.Name = "TSMISetDefaultDownloadDir";
+            this.TSMISetDefaultDownloadDir.Size = new System.Drawing.Size(249, 22);
+            this.TSMISetDefaultDownloadDir.Text = "Set Default Download Location";
+            this.TSMISetDefaultDownloadDir.Click += new System.EventHandler(this.TSMISetDefaultDownloadDir_Click);
             // 
             // SFDTo
             // 
@@ -83,6 +151,20 @@
             this.LayoutMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.LayoutMain.Size = new System.Drawing.Size(624, 177);
             this.LayoutMain.TabIndex = 1;
+            // 
+            // BtnAutoSetTo
+            // 
+            this.BtnAutoSetTo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnAutoSetTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.BtnAutoSetTo.Location = new System.Drawing.Point(479, 9);
+            this.BtnAutoSetTo.Margin = new System.Windows.Forms.Padding(0, 9, 15, 10);
+            this.BtnAutoSetTo.MinimumSize = new System.Drawing.Size(0, 28);
+            this.BtnAutoSetTo.Name = "BtnAutoSetTo";
+            this.BtnAutoSetTo.Size = new System.Drawing.Size(130, 28);
+            this.BtnAutoSetTo.TabIndex = 7;
+            this.BtnAutoSetTo.Text = "Auto Set Save";
+            this.BtnAutoSetTo.UseVisualStyleBackColor = true;
+            this.BtnAutoSetTo.Click += new System.EventHandler(this.BtnAutoSetTo_Click);
             // 
             // LblFrom
             // 
@@ -170,7 +252,6 @@
             this.SSLblLog});
             this.SSMain.Location = new System.Drawing.Point(0, 155);
             this.SSMain.MaximumSize = new System.Drawing.Size(0, 22);
-            this.SSMain.MinimumSize = new System.Drawing.Size(0, 0);
             this.SSMain.Name = "SSMain";
             this.SSMain.Size = new System.Drawing.Size(624, 22);
             this.SSMain.TabIndex = 6;
@@ -181,19 +262,17 @@
             this.SSLblLog.Name = "SSLblLog";
             this.SSLblLog.Size = new System.Drawing.Size(0, 17);
             // 
-            // BtnAutoSetTo
+            // TSMIResetDefaultDownloadDir
             // 
-            this.BtnAutoSetTo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnAutoSetTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.BtnAutoSetTo.Location = new System.Drawing.Point(479, 9);
-            this.BtnAutoSetTo.Margin = new System.Windows.Forms.Padding(0, 9, 15, 10);
-            this.BtnAutoSetTo.MinimumSize = new System.Drawing.Size(0, 28);
-            this.BtnAutoSetTo.Name = "BtnAutoSetTo";
-            this.BtnAutoSetTo.Size = new System.Drawing.Size(130, 28);
-            this.BtnAutoSetTo.TabIndex = 7;
-            this.BtnAutoSetTo.Text = "Auto Set Save";
-            this.BtnAutoSetTo.UseVisualStyleBackColor = true;
-            this.BtnAutoSetTo.Click += new System.EventHandler(this.BtnAutoSetTo_Click);
+            this.TSMIResetDefaultDownloadDir.Name = "TSMIResetDefaultDownloadDir";
+            this.TSMIResetDefaultDownloadDir.Size = new System.Drawing.Size(249, 22);
+            this.TSMIResetDefaultDownloadDir.Text = "Reset Default Download Location";
+            this.TSMIResetDefaultDownloadDir.Click += new System.EventHandler(this.TSMIResetDefaultDownloadDir_Click);
+            // 
+            // TSMSEdit01
+            // 
+            this.TSMSEdit01.Name = "TSMSEdit01";
+            this.TSMSEdit01.Size = new System.Drawing.Size(246, 6);
             // 
             // LiteStreamToMp3Form
             // 
@@ -201,11 +280,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 201);
             this.Controls.Add(this.LayoutMain);
-            this.Controls.Add(this.MenuStripMain);
-            this.MainMenuStrip = this.MenuStripMain;
+            this.Controls.Add(this.TSMMain);
+            this.MainMenuStrip = this.TSMMain;
             this.MinimumSize = new System.Drawing.Size(640, 240);
             this.Name = "LiteStreamToMp3Form";
             this.Text = "LiteStreamToMp3";
+            this.TSMMain.ResumeLayout(false);
+            this.TSMMain.PerformLayout();
             this.LayoutMain.ResumeLayout(false);
             this.LayoutMain.PerformLayout();
             this.SSMain.ResumeLayout(false);
@@ -217,7 +298,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip MenuStripMain;
+        private System.Windows.Forms.MenuStrip TSMMain;
         private System.Windows.Forms.SaveFileDialog SFDTo;
         private System.Windows.Forms.TableLayoutPanel LayoutMain;
         private System.Windows.Forms.Label LblFrom;
@@ -229,6 +310,16 @@
         private System.Windows.Forms.StatusStrip SSMain;
         private System.Windows.Forms.ToolStripStatusLabel SSLblLog;
         private System.Windows.Forms.Button BtnAutoSetTo;
+        private System.Windows.Forms.ToolStripMenuItem TSMIFile;
+        private System.Windows.Forms.ToolStripMenuItem TSMIGotoDefaultDownloadDir;
+        private System.Windows.Forms.ToolStripMenuItem TSMIEdit;
+        private System.Windows.Forms.ToolStripMenuItem TSMIGotoLastDownloadDir;
+        private System.Windows.Forms.ToolStripSeparator TSMSFile01;
+        private System.Windows.Forms.ToolStripMenuItem TSMIExit;
+        private System.Windows.Forms.ToolStripMenuItem TSMISetDefaultDownloadDir;
+        private System.Windows.Forms.FolderBrowserDialog FBDDefaultDownloadFolder;
+        private System.Windows.Forms.ToolStripSeparator TSMSEdit01;
+        private System.Windows.Forms.ToolStripMenuItem TSMIResetDefaultDownloadDir;
     }
 }
 
