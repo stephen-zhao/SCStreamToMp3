@@ -5,7 +5,7 @@ An MP3 downloader for SC. Once complete, SCStreamToMp3 will include a built-in I
 <dl>
 
 <dt>LiteStreamToMp3</dt>
-<dd><a href="https://mega.nz/#!YF8g1AyT!37EvIDtzVfjvzO6nX-FLEAP1S8esMy6JMv8VXYyn9R8">~Release Version 0.1.0.0 (Stable Release)~</a> - Known Issues, may not work on all machines</dd>
+<dd><a href="https://mega.nz/#!YF8g1AyT!37EvIDtzVfjvzO6nX-FLEAP1S8esMy6JMv8VXYyn9R8">~~Release Version 0.1.0.0 (Stable Release)~~</a> - Known Issues, may not work on all machines</dd>
 
 <dt>SCStreamToMp3</dt>
 <dd>Planning Phase</dd>
